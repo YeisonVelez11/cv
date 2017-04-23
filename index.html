@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" ng-app='bios'>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>PROYECTO GENERICO BIOS</title>
+	<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+	<!-- CSS -->
+	<!-- build:css css/style.min.css -->
+    <link rel="stylesheet" type="text/css" href="css/angular-ui-swiper.css" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+
+	<!--<link rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" />-->
+
+    <!-- endbuild -->
+</head>
+<body>
+
+
+<!-- VISOR -->
+<div ui-view></div>
+<!-- TERMINA VISOR -->
+
+
+<!-- LIBRERIAS -->
+<!-- build:nonangularlibs js/nonangularlibs.js -->
+<!--<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<!-- endbuild -->
+<!-- TERMINA LIBRERIAS -->
+
+<!-- PLUGINS DE ANGULAR -->
+<!-- build:angularlibs js/angularlibs.js -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="js/angular-ui-swiper.min.js"></script>
+<script src="js/googlemaps.js"></script>
+
+
+<!--
+<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+-->
+
+
+<!-- endbuild -->
+
+<!-- TERMINA PLUGINS DE ANGULAR -->
+
+<!-- SERVICIOS PROYECTO -->
+<!-- build:services js/services.js -->
+<script src='components/services/utilidades.js'></script>
+<script src='components/services/validaciones.js'></script>
+
+<!-- endbuild -->
+<!-- TERMINA SERVICIOS PROYECTO -->
+
+<!-- CONTANTES, CONTROLADOR Y APP -->
+<!-- build:contservicesapp js/contservicesapp.js -->
+<script src='app/constantes.js'></script>
+<script src='app/controllers.js'></script>
+<script src='app/app.js'></script>
+<!-- endbuild -->
+<!-- TERMINA CONTANTES, CONTROLERS Y APP -->
+
+<!-- CONTROLADORES PROYECTO -->
+<!-- build:controllers js/controllers.js -->
+<script src='components/controllers/homeController.js'></script>
+<!-- endbuild -->
+<!-- TERMINA CONTROLADORES PROYECTO -->
+
+<!-- DIRECTIVAS PROYECTO -->
+<!-- build:directives js/directives.js -->
+<script src='components/directives/directives.js'></script>
+<!-- endbuild -->
+<!-- TERMINA DIRECTIVAS PROYECTO -->
+
+<!-- templates from $templateCache -->
+<!-- build:templates -->
+<!-- endbuild -->
+
+
+
+</body>
+</html>
