@@ -1,180 +1,189 @@
+  <div id='contenedor_todo'> 
 
-    <section id="home"> 
-    <div class='contenedor_section'>
-      <figure class='figure_circulo'>
-        <img  class='foto_circulo' src='img/yeison.jpg' />
-      </figure>
-      <p id="profile">Hola! Soy <strong>Yeison Velez!</strong></p>
-      <p class='profile-subtitle'>Desarrollador WEB Front-End</p>
-      <hr class='hr'>
-      <p class='intro'>Ingeniero en Sistemas y Telecomunicaciones con enfoque al desarrollo front-end, desde el punto de vista de funcionalidad, con capacidad de aprender y adaptarse a nuevas técnologias.</p>
-      <p class='parrafo_boton'>email: yeison_velez11@hotmail.com / Cel: 3002797900</p>
-      <div class='botones_rs'>
-        <a href='https://www.facebook.com/yeison.velez.11' target="_blank"><i class="fa fa-facebook"></i></a>
-        <a href='https://www.youtube.com/channel/UCeaf1c5_ts7mUrGRL9hzT1A' target="_blank"><i class="fa fa-youtube"></i></a>
-        <a href='https://twitter.com/yeisonvelez11' target="_blank"><i class="fa fa-twitter"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="resumen">  
-    <div class='contenedor_section'>
-      <h2 class="titulo_seccion"><strong>Resumen</strong></h2>
-      <a class='boton'><i class="fa fa-download" aria-hidden="true"></i> DESCARGAR MI RESUMEN</a>
-      <div>
-        <h2 class='subtitulo_seccion'><i class="fa fa-university" aria-hidden="true"></i>  Educación</h2>
-        <div class='resumen-item'>
-          <h3 class='titulo-item'>titulo item</h3>
-          <h4 class='titulo-pie'>empece en y termine en</h4>
-          <p class='texto-seccion'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, earum animi impedit, qui nobis repudiandae natus omnis deleniti excepturi itaque similique saepe. Sequi animi dolorum eum tenetur fugiat sed molestias!</p>
+      <nav>
+        <ul>  
+          <li class='boton' ng-click="ver_seccion('home')"><a  >INICIO</a></li>
+          <li class='boton' ng-click="ver_seccion('resumen')"><a  >RESUMEN</a></li>
+          <li class='boton' ng-click="ver_seccion('habilidades')"><a  >HABILIDADES</a></li>
+          <li class='boton' ng-click="ver_seccion('portafolio')"><a  >PORTAFOLIO</a></li>
+          <li class='boton' ng-click="ver_seccion('contacto')"><a  >CONTACTO</a></li>
+        </ul>
+      </nav> 
+      <section id="home"> 
+      <div class='contenedor_section'>
+        <figure class='figure_circulo'>
+          <img  class='foto_circulo' src='img/yeison.jpg' />
+        </figure>
+        <p id="profile">Hola! Soy <strong>Yeison Velez!</strong></p>
+        <p class='profile-subtitle'>Desarrollador WEB Front-End</p>
+        <hr class='hr'>
+        <p class='intro'>Ingeniero en Sistemas y Telecomunicaciones con enfoque al desarrollo front-end, desde el punto de vista de funcionalidad, con capacidad de aprender y adaptarse a nuevas técnologias.</p>
+        <p class='parrafo_boton'>email: yeison_velez11@hotmail.com / Cel: 3002797900</p>
+        <div class='botones_rs'>
+          <a href='https://www.facebook.com/yeison.velez.11' target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href='https://www.youtube.com/channel/UCeaf1c5_ts7mUrGRL9hzT1A' target="_blank"><i class="fa fa-youtube"></i></a>
+          <a href='https://twitter.com/yeisonvelez11' target="_blank"><i class="fa fa-twitter"></i></a>
         </div>
       </div>
-      <div>
-        <h2 class='subtitulo_seccion'><i class="fa fa-flag" aria-hidden="true"></i>  Experiencia</h2>
-        <div class='resumen-item'>
-          <h3 class='titulo-item'>titulo item</h3>
-          <h4 class='titulo-pie'>empece en y termine en</h4>
-          <p class='texto-seccion'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, earum animi impedit, qui nobis repudiandae natus omnis deleniti excepturi itaque similique saepe. Sequi animi dolorum eum tenetur fugiat sed molestias!</p>
-        </div>
-      </div>
-      <div>
-        <h2 class='subtitulo_seccion'><i class="fa fa-commenting" aria-hidden="true"></i>  Testimonios</h2>
-       <swiper>
-        <slides>
+    </section>
 
-          <slide>
-            <div class='testimonio'>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aut veritatis quibusdam fugiat quaerat nostrum distinctio iste quos necessitatibus. Sint ipsa iure, doloremque eligendi. Tempore corporis iusto aut fugit ratione.
-              </p>
+    <section id="resumen">  
+      <div class='contenedor_section'>
+        <h2 class="titulo_seccion"><strong>Resumen</strong></h2>
+        <a class='boton'><i class="fa fa-download" aria-hidden="true"></i> DESCARGAR MI RESUMEN</a>
+        <div>
+          <h2 class='subtitulo_seccion'><i class="fa fa-university" aria-hidden="true"></i>  Educación</h2>
+          <div class='resumen-item'>
+            <h3 class='titulo-item'>titulo item</h3>
+            <h4 class='titulo-pie'>empece en y termine en</h4>
+            <p class='texto-seccion'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, earum animi impedit, qui nobis repudiandae natus omnis deleniti excepturi itaque similique saepe. Sequi animi dolorum eum tenetur fugiat sed molestias!</p>
+          </div>
+        </div>
+        <div>
+          <h2 class='subtitulo_seccion'><i class="fa fa-flag" aria-hidden="true"></i>  Experiencia</h2>
+          <div class='resumen-item'>
+            <h3 class='titulo-item'>titulo item</h3>
+            <h4 class='titulo-pie'>empece en y termine en</h4>
+            <p class='texto-seccion'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, earum animi impedit, qui nobis repudiandae natus omnis deleniti excepturi itaque similique saepe. Sequi animi dolorum eum tenetur fugiat sed molestias!</p>
+          </div>
+        </div>
+        <div>
+          <h2 class='subtitulo_seccion'><i class="fa fa-commenting" aria-hidden="true"></i>  Testimonios</h2>
+         <swiper>
+          <slides>
+
+            <slide>
+              <div class='testimonio'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aut veritatis quibusdam fugiat quaerat nostrum distinctio iste quos necessitatibus. Sint ipsa iure, doloremque eligendi. Tempore corporis iusto aut fugit ratione.
+                </p>
+              </div>
+              <figure class='figure_circulo_peque'>
+               <img class='foto_circulo' src='img/yeison.jpg' />
+              </figure>
+              <div class='nombre'>Jorge Hernán Franco</div>
+              <div class='cargo'>Coordinador de prácticas Universidad de Manizales</div>
+            </slide>
+            <slide>
+              <div class='testimonio'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aut veritatis quibusdam fugiat quaerat nostrum distinctio iste quos necessitatibus. Sint ipsa iure, doloremque eligendi. Tempore corporis iusto aut fugit ratione.
+                </p>
+              </div>
+              <figure class='figure_circulo_peque'>
+               <img class='foto_circulo' src='img/yeison.jpg' />
+              </figure>
+              <div class='nombre'>Jorge Hernán Franco</div>
+              <div class='cargo'>Coordinador de prácticas Universidad de Manizales</div>
+           </slide>
+          </slides>
+          <!--<prev>
+          </prev>
+          <next></next>-->
+          <pagination></pagination>
+        </swiper>
+        <div class='hr_footer'></div>
+        <div class='footer-quote'>El mejor Camino para predecir el futuro, es creádolo..</div>
+        <i class='footer-quote'>Peter Drucker</i>
+      </div>
+    </section>
+
+    <section id="habilidades">  
+      <div class='contenedor_section'>
+        <h2 class="titulo_seccion"><strong>Habilidades</strong></h2>
+        <h3 class="titulo_habilidades"><i class="fa fa-users"></i>&nbsp;&nbsp; Professional Skills</h3>
+          <div class='seccion_barras'>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>70%</span>
+              <span class='barra_label'>Comunicación</span>
+            <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:70%"></div>
             </div>
-            <figure class='figure_circulo_peque'>
-             <img class='foto_circulo' src='img/yeison.jpg' />
+            <div class="barra_fondo">
+              <span class='barra_indicador'>100%</span>
+              <span class='barra_label'>Expresión</span>
+            <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:100%"></div>
+            </div>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>0%</span>
+              <span class='barra_label'>Hermosura</span>
+            <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:0%"></div>
+            </div> 
+          </div>
+          <h3 class="titulo_habilidades"><i class="fa fa-laptop"></i>&nbsp;&nbsp; Codigo</h3>
+          <div class='seccion_barras'>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>70%</span>
+              <span class='barra_label'>Comunicación</span>
+            <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:70%"></div>
+            </div>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>70%</span>
+              <span class='barra_label'>Comunicación</span>
+            <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:85%"></div>
+            </div>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>70%</span>
+              <span class='barra_label'>Comunicación</span>
+            <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:85%"></div>
+            </div> 
+          </div>
+      </div>
+    </section>
+
+    <section id="portafolio">
+    <div class='contenedor_flecha_prev' ng-show="portafolio" ng-click='fn_transicion("prev")'>
+        <i class="fa fa-chevron-left flecha_izqu" ></i>
+    </div>
+    <div class='contenedor_flecha_next' ng-show="portafolio" ng-click='fn_transicion("next")'>
+        <i class="fa fa-chevron-right flecha_derec" ></i>
+    </div>
+    <div class='contendor_portafolio' ng-show="portafolio">
+      <i class="fa fa-times" aria-hidden="true"  ng-click="fn_cerrarPortalio()" ></i>
+       <video id="video" controls="false"  ng-class='transicion'>
+        <source  type="video/mp4">
+          Your browser does not support the video tag.
+        </video> 
+    </div>
+    <div class='fondo_portafolio' ng-show="portafolio" ng-click="fn_cerrarPortalio()">  </div>
+
+    
+      <div class='contenedor_section'>
+        <h2 class="titulo_seccion"><strong>PORTAFOLIO</strong></h2>
+        <div>
+         <div ng-repeat="media in aMedia" class="contenedor_imagenes_portafolio"> 
+          <a href='' ng-click="fn_transicion($index)">
+            <figure class='figure_portafolio'>
+              <div class='descripcion_imagen'>
+                <span class='titulo_proyecto'>{{media.titulo}}</span>
+                <span class='see-more'>{{media.descripcion}}</span>
+              </div>
+              <img ng-src='{{media.imagen}}' />
             </figure>
-            <div class='nombre'>Jorge Hernán Franco</div>
-            <div class='cargo'>Coordinador de prácticas Universidad de Manizales</div>
-          </slide>
-          <slide>
-            <div class='testimonio'>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aut veritatis quibusdam fugiat quaerat nostrum distinctio iste quos necessitatibus. Sint ipsa iure, doloremque eligendi. Tempore corporis iusto aut fugit ratione.
-              </p>
-            </div>
-            <figure class='figure_circulo_peque'>
-             <img class='foto_circulo' src='img/yeison.jpg' />
-            </figure>
-            <div class='nombre'>Jorge Hernán Franco</div>
-            <div class='cargo'>Coordinador de prácticas Universidad de Manizales</div>
-         </slide>
-        </slides>
-        <!--<prev>
-        </prev>
-        <next></next>-->
-        <pagination></pagination>
-      </swiper>
-      <div class='hr_footer'></div>
-      <div class='footer-quote'>El mejor Camino para predecir el futuro, es creádolo..</div>
-      <i class='footer-quote'>Peter Drucker</i>
-    </div>
-  </section>
-
-  <section id="habilidades">  
-    <div class='contenedor_section'>
-      <h2 class="titulo_seccion"><strong>Habilidades</strong></h2>
-      <h3 class="titulo_habilidades"><i class="fa fa-users"></i>&nbsp;&nbsp; Professional Skills</h3>
-        <div class='seccion_barras'>
-          <div class="barra_fondo">
-            <span class='barra_indicador'>70%</span>
-            <span class='barra_label'>Comunicación</span>
-          <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:70%"></div>
-          </div>
-          <div class="barra_fondo">
-            <span class='barra_indicador'>100%</span>
-            <span class='barra_label'>Expresión</span>
-          <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:100%"></div>
-          </div>
-          <div class="barra_fondo">
-            <span class='barra_indicador'>0%</span>
-            <span class='barra_label'>Hermosura</span>
-          <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:0%"></div>
-          </div> 
+          </a>
         </div>
-        <h3 class="titulo_habilidades"><i class="fa fa-laptop"></i>&nbsp;&nbsp; Codigo</h3>
-        <div class='seccion_barras'>
-          <div class="barra_fondo">
-            <span class='barra_indicador'>70%</span>
-            <span class='barra_label'>Comunicación</span>
-          <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:70%"></div>
-          </div>
-          <div class="barra_fondo">
-            <span class='barra_indicador'>70%</span>
-            <span class='barra_label'>Comunicación</span>
-          <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:85%"></div>
-          </div>
-          <div class="barra_fondo">
-            <span class='barra_indicador'>70%</span>
-            <span class='barra_label'>Comunicación</span>
-          <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:85%"></div>
-          </div> 
+          
         </div>
-    </div>
-  </section>
-
-  <section id="portafolio">
-  <div class='contenedor_flecha_prev' ng-show="portafolio" ng-click='fn_transicion("prev")'>
-      <i class="fa fa-chevron-left flecha_izqu" ></i>
-  </div>
-  <div class='contenedor_flecha_next' ng-show="portafolio" ng-click='fn_transicion("next")'>
-      <i class="fa fa-chevron-right flecha_derec" ></i>
-  </div>
-  <div class='contendor_portafolio' ng-show="portafolio">
-    <i class="fa fa-times" aria-hidden="true"  ng-click="fn_cerrarPortalio()" ></i>
-     <video id="video" controls="false"  ng-class='transicion'>
-      <source  type="video/mp4">
-        Your browser does not support the video tag.
-      </video> 
-  </div>
-  <div class='fondo_portafolio' ng-show="portafolio" ng-click="fn_cerrarPortalio()">  </div>
-
-  
-    <div class='contenedor_section'>
-      <h2 class="titulo_seccion"><strong>PORTAFOLIO</strong></h2>
-      <div>
-       <div ng-repeat="media in aMedia" class="contenedor_imagenes_portafolio"> 
-        <a href='' ng-click="fn_transicion($index)">
-          <figure class='figure_portafolio'>
-            <div class='descripcion_imagen'>
-              <span class='titulo_proyecto'>{{media.titulo}}</span>
-              <span class='see-more'>{{media.descripcion}}</span>
-            </div>
-            <img ng-src='{{media.imagen}}' />
-          </figure>
-        </a>
       </div>
-        
+    </section>
+
+    <section id="contacto">  
+      <div class='contenedor_section'>
+        <h2 class="titulo_seccion"><strong>Contacto</strong></h2>
+          <div id="map"></div>
+          <form name='form_enviar_correo'>
+            <h4 class="contacto_subtitulo"><i class="fa fa-map"></i>&nbsp;   Dirección</h4>
+            <p class='texto-seccion'>Manizales(Caldas-Colombia)</p>
+            <h4 class="contacto_subtitulo"><i class="fa fa-phone-square"></i>&nbsp;   Celular</h4>
+            <p class='texto-seccion'>+573002797900</p>
+            <h4 class="contacto_subtitulo"><i class="fa fa-envelope"></i>&nbsp;   Mail</h4>
+            <p class='texto-seccion'>yeison_velez11@hotmail.com</p>
+            <h4 class="contacto_subtitulo"><i class="fa fa-paper-plane-o"></i>&nbsp;   Enviame un Mensaje</h4>
+            <input class="estilo_input_text" id="nombre" name="nombre" ng-model='nombre' placeholder="Nombre" type="text" validacion="required">
+            <input class="estilo_input_text" id="email" name="email" ng-model='email' placeholder="Email" type="text" validacion="required,email">
+            <input class="estilo_input_text" id="asunto" name="asunto" ng-model='asunto' placeholder="Asunto" type="text" validacion="required">
+            <textarea rows='30' class="estilo_input_text" id="mensaje" name="mensaje" ng-model='mensaje' placeholder="Mensaje" type="text" validacion="required"></textarea>
+            <input type="button" class="boton_enviar" value="Enviar!" ng-click='fn_ValidarTodo(this.form_enviar_correo); form_enviar_correo.$valid && enviarCorreo()'>
+          </form>
       </div>
-    </div>
-  </section>
-
-  <section id="contacto">  
-    <div class='contenedor_section'>
-      <h2 class="titulo_seccion"><strong>Contacto</strong></h2>
-        <div id="map"></div>
-        <form name='form_enviar_correo'>
-          <h4 class="contacto_subtitulo"><i class="fa fa-map"></i>&nbsp;   Dirección</h4>
-          <p class='texto-seccion'>Manizales(Caldas-Colombia)</p>
-          <h4 class="contacto_subtitulo"><i class="fa fa-phone-square"></i>&nbsp;   Celular</h4>
-          <p class='texto-seccion'>+573002797900</p>
-          <h4 class="contacto_subtitulo"><i class="fa fa-envelope"></i>&nbsp;   Mail</h4>
-          <p class='texto-seccion'>yeison_velez11@hotmail.com</p>
-          <h4 class="contacto_subtitulo"><i class="fa fa-paper-plane-o"></i>&nbsp;   Enviame un Mensaje</h4>
-          <input class="estilo_input_text" id="nombre" name="nombre" ng-model='nombre' placeholder="Nombre" type="text" validacion="required">
-          <input class="estilo_input_text" id="email" name="email" ng-model='email' placeholder="Email" type="text" validacion="required,email">
-          <input class="estilo_input_text" id="asunto" name="asunto" ng-model='asunto' placeholder="Asunto" type="text" validacion="required">
-          <textarea rows='30' class="estilo_input_text" id="mensaje" name="mensaje" ng-model='mensaje' placeholder="Mensaje" type="text" validacion="required"></textarea>
-          <input type="button" class="boton_enviar" value="Enviar!" ng-click='fn_ValidarTodo(this.form_enviar_correo); form_enviar_correo.$valid && enviarCorreo()'>
-        </form>
-
-
-    </div>
-  </section>
+    </section>
+  </div>

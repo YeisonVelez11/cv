@@ -48,6 +48,8 @@ section{
   margin: 30px 4% 10px 4%;
   background: url(../img/mascara_seccion.png) repeat-x right top #f4f4f4;
   box-shadow: 0px -6px 3px -1px #000000;
+  transition: all 2s;
+
 }
 
 section #home{
@@ -183,6 +185,8 @@ section h2.titulo_seccion{
   transition: all 0.3s ease-in-out;
   position: relative;
   z-index: 1;
+  cursor: pointer;
+
 }
 
 
@@ -798,6 +802,8 @@ figure .descripcion_imagen{
    animation: prev 0.5s 1; 
  }
 
+
+
 .contenedor_imagenes_portafolio{
   margin-bottom:12px;
 }
@@ -903,15 +909,103 @@ textarea.estilo_input_text{
     background: #d9212a !important;
 }
 
+nav{
+  transition: all 0.3s;
+  display:none;
+  width:135.5px;
+  text-decoration: none;
+  margin: 0px;
+  overflow: hidden;
+}
+
+
+
+li.boton{
+    display: block;
+    padding: 10px;
+    padding-left: 15px;
+    font-size: 16px;
+    width: 135.5px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 4px;
+    margin-bottom: 6px;
+    transition: all 0.3s;
+    text-align: left;
+}
+
+ul{
+  text-decoration: none;
+  margin: 0px;
+  padding:0px;
+}
+
+
+
+section.mostrar_seccion{
+  -webkit-animation: mostrar_seccion 1s 1; 
+  -webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes mostrar_seccion {
+   from {
+
+      opacity:0;
+      left: -200px;
+
+   }
+   to {
+      left:0px;
+      opacity:1;
+  }
+}
+
+section.remover_seccion{
+  -webkit-animation: remover_seccion 1s 1; 
+  -webkit-animation-fill-mode:forwards;
+}
+
+
+
+@-webkit-keyframes remover_seccion {
+   from {
+      opacity:1;
+      left: 0px;
+
+   }
+   to {
+      left:-400px;
+      opacity:0;
+      display:none;
+  }
+}
+
+
+section.centrar_seccionPpal{
+  -webkit-animation: centrar_seccionPpal 1s 1; 
+  -webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes centrar_seccionPpal {
+   from {
+      left: 0px;
+
+   }
+   to {
+      left:400px;
+
+  }
+}
+
+
 @media screen and (min-width: 320px){
-    body{
-    }
+
     .contendor_portafolio{
       width: 74%;
       left:13%;
     }
     .contenedor_flecha_prev, .contenedor_flecha_next{
-      width: 13%;
+      width: 20%;
     }
 }
 
@@ -928,10 +1022,45 @@ textarea.estilo_input_text{
 }
 
 
-@media screen and (min-width: 950px){
+@media screen and (min-width: 1035px){
+  #contenedor_todo{
+    position: absolute; /* centrar horizontal*/
+    left: 50%; /* centrar horizontal*/
+    transform: translateX(-50%);/* centrar horizontal*/
+    width:82%;
+    background: red;
 
-    
+  }
+  nav{
+    display: inline-block;
+    float:left;
+    margin:48px 10px 0px 0px;
+   /* left: 13%;
+    position: relative;*/
+  }
+
+  #resumen,#habilidades,#portafolio,#contacto{
+    display:none;
+    z-index: 1;
+  }
+  section{
+    float:left;
+    margin:52px 0px 0px 0px;
+    display:inline-block;
+    width:42%;
+    z-index: 2;
+/*    position: absolute;
+    right: 10%;*/
+  }
+
+  section#home{
+    margin-right: 10px;
+  }
+
 }
+
+
+
 
 .span_wrong{
     border-color: #a94442;

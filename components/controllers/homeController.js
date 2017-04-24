@@ -97,20 +97,34 @@ $scope.portafolio=false;
 		}
 		document.getElementById('video').play();
 	}
+	$scope.ver_seccion=function(seccion){
+
+	    if(document.getElementById(seccion).id!="home" ){
+
+		    angular.forEach(document.querySelectorAll("section"), function(value, key){
+		    	if(value.id!="home"){
+		    		document.getElementById(value.id).style.display='none';
+		    		document.getElementById(value.id).classList.remove('mostrar_seccion');
+
+		    	}
+
+			})
+			var elemento = document.getElementById(seccion);
+			if(elemento.classList.value.search('mostrar')==-1){
+				document.getElementById(seccion).style.display='inline-block';
+				elemento.classList.add('mostrar_seccion');
+				elemento.classList.remove('remover_seccion');	
 
 
-/*
-(angular.element((document.getElementById('error'+sNombreModel )))''
+			}
+			else{
+				elemento.classList.add('remover_seccion');
+				elemento.classList.remove('mostrar_seccion');
+				document.getElementById(seccion).style.display='none';
+	
+			}
+		}
 
-     angular.forEach(angular.element('[ng-model="'+sNombreModel+'"]'), function(value, key){
-
-                        iKey_check=key;
-                        oCheckbox=value;
-                        if(value.checked==true){
-                            cont_check_true++;
-                        }
-                    });
-                    
-*/
+	}
 
 });
