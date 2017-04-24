@@ -24,7 +24,7 @@ $scope.portafolio=false;
             data: {"prueba":"prueba"},
             timeout: timeout
         }).then(function(data) {
-           console.log(data)
+           console.log(data.data)
         },function(data) {
              console.log(data)
         });
