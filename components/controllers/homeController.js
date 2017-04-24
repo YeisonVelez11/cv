@@ -19,13 +19,13 @@ $scope.portafolio=false;
 	$scope.enviarCorreo= function(){
 		alert("Enviar correo");
 		$http({
-            method: 'POST',
+            method: 'GET',
             url: 'php/enviarCorreo.php?nombre='+$scope.nombre+"&email="+$scope.email+"&asunto="+$scope.asunto+"&mensaje="+$scope.mensaje,
             data: {"prueba":"prueba"},
             timeout: timeout
         }).then(function(data) {
            console.log(data)
-        },function(response) {
+        },function(data) {
              console.log(data)
         });
 	}
