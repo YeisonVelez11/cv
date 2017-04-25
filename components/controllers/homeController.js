@@ -1,12 +1,18 @@
 angularRoutingApp.controller('homeController', function($scope,$state,$http){
 $scope.portafolio=false;
-	var map = new google.maps.Map(document.getElementById('map'), {
-	  center: {lat: 5.0698307, lng: -75.5173124},
-	  scrollwheel: false,
-	  zoom: 15
-	});
-	 google.maps.event.trigger(map, "resize");
-
+	
+	$scope.flag_mapa=false;
+	$scope.mapa=function(){
+	if($scope.flag_mapa==false){
+		var map = new google.maps.Map(document.getElementById('map'), {
+		  center: {lat: 5.0698307, lng: -75.5173124},
+		  scrollwheel: false,
+		  zoom: 15
+		});
+		 google.maps.event.trigger(map, "resize");
+		 $scope.flag_mapa=true;
+		}
+	}
 
 	$scope.fn_cerrarPortalio= function(){
 		$scope.portafolio=false;
