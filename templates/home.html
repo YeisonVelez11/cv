@@ -1,6 +1,22 @@
-  <div id='contenedor_todo'> 
+   <div class='contenedor_flecha_prev' ng-show="portafolio" ng-click='fn_transicion("prev")'>
+        <i class="fa fa-chevron-left flecha_izqu" ></i>
+    </div>
+    <div class='contenedor_flecha_next' ng-show="portafolio" ng-click='fn_transicion("next")'>
+        <i class="fa fa-chevron-right flecha_derec" ></i>
+    </div>
+    <div class='contendor_portafolio' ng-show="portafolio">
+      <i class="fa fa-times" aria-hidden="true"  ng-click="fn_cerrarPortalio()" ></i>
+       <video id="video" controls="false"  ng-class='transicion'>
+        <source  type="video/mp4">
+          Your browser does not support the video tag.
+        </video> 
+    </div>
+    <div class='fondo_portafolio' ng-show="portafolio" ng-click="fn_cerrarPortalio()">  </div>
 
-      <nav>
+
+  <div id='contenedor_todo'> 
+      
+      <nav id="menu">
         <ul>  
           <li class='boton' ng-click="ver_seccion('home')"><a  >INICIO</a></li>
           <li class='boton' ng-click="ver_seccion('resumen')"><a  >RESUMEN</a></li>
@@ -131,21 +147,7 @@
     </section>
 
     <section id="portafolio">
-    <div class='contenedor_flecha_prev' ng-show="portafolio" ng-click='fn_transicion("prev")'>
-        <i class="fa fa-chevron-left flecha_izqu" ></i>
-    </div>
-    <div class='contenedor_flecha_next' ng-show="portafolio" ng-click='fn_transicion("next")'>
-        <i class="fa fa-chevron-right flecha_derec" ></i>
-    </div>
-    <div class='contendor_portafolio' ng-show="portafolio">
-      <i class="fa fa-times" aria-hidden="true"  ng-click="fn_cerrarPortalio()" ></i>
-       <video id="video" controls="false"  ng-class='transicion'>
-        <source  type="video/mp4">
-          Your browser does not support the video tag.
-        </video> 
-    </div>
-    <div class='fondo_portafolio' ng-show="portafolio" ng-click="fn_cerrarPortalio()">  </div>
-
+   
     
       <div class='contenedor_section'>
         <h2 class="titulo_seccion"><strong>PORTAFOLIO</strong></h2>

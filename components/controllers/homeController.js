@@ -5,9 +5,7 @@ $scope.portafolio=false;
 	  scrollwheel: false,
 	  zoom: 15
 	});
-	 var center = map.getCenter();
 	 google.maps.event.trigger(map, "resize");
-	 map.setCenter(center);
 
 
 	$scope.fn_cerrarPortalio= function(){
@@ -98,30 +96,59 @@ $scope.portafolio=false;
 		document.getElementById('video').play();
 	}
 	$scope.ver_seccion=function(seccion){
+		var elemento = document.getElementById(seccion);
 
 	    if(document.getElementById(seccion).id!="home" ){
+		    document.getElementById("home").classList.remove('centrar_seccionPpal');
+		    document.getElementById("home").classList.add('origen_seccionPpal');
 
+		    document.getElementById("menu").classList.remove('centrar_seccionPpal_menu');
+		    document.getElementById("menu").classList.add('origen_seccionPpal_menu');
 		    angular.forEach(document.querySelectorAll("section"), function(value, key){
 		    	if(value.id!="home"){
 		    		document.getElementById(value.id).style.display='none';
+		    		document.getElementById(value.id).style.position='relative';
 		    		document.getElementById(value.id).classList.remove('mostrar_seccion');
+		    		document.getElementById(value.id).classList.remove('transicion_alaldo_home');
 
 		    	}
-
 			})
-			var elemento = document.getElementById(seccion);
 			if(elemento.classList.value.search('mostrar')==-1){
 				document.getElementById(seccion).style.display='inline-block';
+				document.getElementById(seccion).style.position='absolute';
 				elemento.classList.add('mostrar_seccion');
 				elemento.classList.remove('remover_seccion');	
-
 
 			}
 			else{
 				elemento.classList.add('remover_seccion');
 				elemento.classList.remove('mostrar_seccion');
 				document.getElementById(seccion).style.display='none';
-	
+				document.getElementById(seccion).style.position='relative';
+
+			}
+		}
+		else{
+			angular.forEach(document.querySelectorAll("section"), function(value, key){
+		    	if(value.id!="home"){
+
+		    		document.getElementById(value.id).classList.remove('mostrar_seccion');
+		    		document.getElementById(value.id).classList.add('transicion_alaldo_home');	
+
+		    	}
+			})
+
+
+
+
+
+
+			if(document.getElementById("home").classList.value!=""){
+				document.getElementById("home").classList.remove('origen_seccionPpal');
+				document.getElementById("menu").classList.remove('origen_seccionPpal_menu');
+
+				document.getElementById("home").classList.add('centrar_seccionPpal');
+				document.getElementById("menu").classList.add('centrar_seccionPpal_menu');
 			}
 		}
 

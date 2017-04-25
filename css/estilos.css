@@ -910,7 +910,11 @@ textarea.estilo_input_text{
 }
 
 nav{
-  transition: all 0.3s;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   display:none;
   width:135.5px;
   text-decoration: none;
@@ -951,19 +955,48 @@ section.mostrar_seccion{
    from {
 
       opacity:0;
-      left: -200px;
+      left: 34%;
 
    }
    to {
-      left:0px;
+      left: 56.7%;
       opacity:1;
+
   }
 }
+
+
+
+
+
+
+section.transicion_alaldo_home{
+  -webkit-animation: transicion_alaldo_home 1s 1; 
+  -webkit-animation-fill-mode:forwards;
+}
+
+
+
+
+@-webkit-keyframes transicion_alaldo_home {
+   from {
+      opacity:1;
+      left: 56.7%;
+
+   }
+   to {
+      left: 34%;
+      opacity:0;
+      display:none;
+  }
+}
+
 
 section.remover_seccion{
   -webkit-animation: remover_seccion 1s 1; 
   -webkit-animation-fill-mode:forwards;
 }
+
 
 
 
@@ -981,6 +1014,39 @@ section.remover_seccion{
 }
 
 
+nav.centrar_seccionPpal_menu{
+  -webkit-animation: centrar_seccionPpal_menu 1s 1; 
+  -webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes centrar_seccionPpal_menu {
+   from {
+      margin-left: 0px;
+
+   }
+   to {
+      margin-left: 22%;
+
+  }
+}
+
+nav.origen_seccionPpal_menu{
+  -webkit-animation: origen_seccionPpal_menu 1s 1; 
+  -webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes origen_seccionPpal_menu {
+   from {
+      margin-left: 22%;
+
+   }
+   to {
+      margin-left: 0px;
+
+  }
+}
+
+
 section.centrar_seccionPpal{
   -webkit-animation: centrar_seccionPpal 1s 1; 
   -webkit-animation-fill-mode:forwards;
@@ -988,11 +1054,28 @@ section.centrar_seccionPpal{
 
 @-webkit-keyframes centrar_seccionPpal {
    from {
-      left: 0px;
+      margin-right: 10px;
 
    }
    to {
-      left:400px;
+      margin-right: 22%;
+
+  }
+}
+
+
+section.origen_seccionPpal{
+  -webkit-animation: origen_seccionPpal 1s 1; 
+  -webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes origen_seccionPpal {
+   from {
+      margin-right: 22%;
+
+   }
+   to {
+      margin-right: 10px;
 
   }
 }
@@ -1024,9 +1107,10 @@ section.centrar_seccionPpal{
 
 @media screen and (min-width: 1035px){
   #contenedor_todo{
-    position: absolute; /* centrar horizontal*/
+    position: relative; /* centrar horizontal*/
     left: 50%; /* centrar horizontal*/
-    transform: translateX(-50%);/* centrar horizontal*/
+    transform: translate(-50%,-50%);/* centrar horizontal*/
+    top: 50%;
     width:82%;
     background: red;
 
@@ -1034,7 +1118,13 @@ section.centrar_seccionPpal{
   nav{
     display: inline-block;
     float:left;
+    __margin:48px 10px 0px 0px;
     margin:48px 10px 0px 0px;
+    margin-left: 22%;
+    width: 13%;
+    
+    __margin-left: 22%;
+
    /* left: 13%;
     position: relative;*/
   }
@@ -1049,18 +1139,15 @@ section.centrar_seccionPpal{
     display:inline-block;
     width:42%;
     z-index: 2;
-/*    position: absolute;
-    right: 10%;*/
   }
 
   section#home{
-    margin-right: 10px;
+    __margin-right: 10px;
+    __margin-right: 22%;
+    margin-right: 22%;
   }
 
 }
-
-
-
 
 .span_wrong{
     border-color: #a94442;
