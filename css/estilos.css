@@ -1083,12 +1083,15 @@ section.origen_seccionPpal{
 
   #contenedor_todo{
     position: absolute; /* centrar horizontal*/
-    left: 50%; /* centrar horizontal*/
-    transform: translate(-50%,-50%);/* centrar horizontal*/
+    __left: 50%; /* centrar horizontal*/
+    /*-webkit-transform: translate(-50%,-50%);/
+    transform: translate(-50%,-50%);*/
+    transform: translateY(-50%);
     top: 50%;
     width:82%;
+    margin:0px 9%;
     background: red;
-    height: 575px;
+    height: 570px;
   }
 
   nav{
