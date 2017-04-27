@@ -357,6 +357,35 @@ size(en bytes 15000000 = 15mb)
 
         }
     };
-});
+})
 
+.directive('resize', ['$window', function ($window) {
+     return {
+        link: link,
+        restrict: 'A'           
+     };
+     function link(scope, element, attrs){
+        scope.width = $window.innerWidth;
+        
+            function onResize(){
+                // uncomment for only fire when $window.innerWidth change   
+                scope.ocultarSeccion="333"
+                if (scope.width !== $window.innerWidth)
+                {
+                    scope.width = $window.innerWidth;
+                    if(scope.width<992){
+                        scope.seccionActiva=true;
+                        scope.ocultarSeccion=true;
+                    }
+                    scope.$digest();
+                }
+            };
 
+            function cleanUp() {
+                angular.element($window).off('resize', onResize);
+            }
+
+            angular.element($window).on('resize', onResize);
+            scope.$on('$destroy', cleanUp);
+     }    
+ }]);

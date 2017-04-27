@@ -1,18 +1,18 @@
-angularRoutingApp.controller('homeController', function($scope,$state,$http,$timeout){
+angularRoutingApp.controller('homeController', function($scope,$state,$http,$timeout,$window){
 $scope.portafolio=false;
+if($window.innerWidth<992){
+	$scope.ocultarSeccion=true;
+	$scope.seccionActiva=true;
+
+}
+else{
+	$scope.ocultarSeccion=false;
+	$scope.seccionActiva='';
+}
 	
-	$scope.flag_mapa=false;
-	$scope.mapa=function(){
-	if($scope.flag_mapa==false){
-		var map = new google.maps.Map(document.getElementById('map'), {
-		  center: {lat: 5.0698307, lng: -75.5173124},
-		  scrollwheel: false,
-		  zoom: 15
-		});
-		 google.maps.event.trigger(map, "resize");
-		 $scope.flag_mapa=true;
-		}
-	}
+	
+
+
 
 	$scope.fn_cerrarPortalio= function(){
 		$scope.portafolio=false;
@@ -101,13 +101,13 @@ $scope.portafolio=false;
 		}
 		document.getElementById('video').play();
 	}
-	$scope.ocultarSeccion=false;
+
 	$scope.ver_seccion=function(seccion){
 		$scope.ocultarSeccion=seccion;
+		$scope.seccionActiva=seccion;
 		$timeout(function() {
    
   	
-			console.log(document.getElementById(seccion))
 			var elemento = document.getElementById(seccion);
 
 
@@ -161,6 +161,13 @@ $scope.portafolio=false;
 			}
 		})	
 
-	}
-
+	}/*
+	var map = new google.maps.Map(document.getElementById('map'), {
+		  center: {lat: 5.0698307, lng: -75.5173124},
+		  scrollwheel: false,
+		  zoom: 15
+		});
+		 google.maps.event.trigger(map, "resize");
+		
+      */
 });
