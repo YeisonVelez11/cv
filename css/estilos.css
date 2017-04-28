@@ -81,7 +81,7 @@ section{
   margin: 30px 4% 10px 4%;
   background: url(../img/mascara_seccion.png) repeat-x right top #f4f4f4;
   box-shadow: 0px -6px 3px -1px #000000;
-  transition: all 2s;
+  transition: all linear 2s;
 
 }
 
@@ -984,9 +984,9 @@ textarea.estilo_input_text{
 nav{
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   display:none;
   width:135.5px;
   text-decoration: none;
@@ -1019,7 +1019,7 @@ ul{
 
 
 section.mostrar_seccion{
-  -webkit-animation: mostrar_seccion 1s 1; 
+  -webkit-animation: mostrar_seccion 1s linear 1; 
   -webkit-animation-fill-mode:forwards;
 }
 
@@ -1043,7 +1043,7 @@ section.mostrar_seccion{
 
 
 section.transicion_alaldo_home{
-  -webkit-animation: transicion_alaldo_home 1s 1; 
+  -webkit-animation: transicion_alaldo_home 1s linear 1; 
   -webkit-animation-fill-mode:forwards;
 }
 
@@ -1065,7 +1065,7 @@ section.transicion_alaldo_home{
 
 
 section.remover_seccion{
-  -webkit-animation: remover_seccion 1s 1; 
+  -webkit-animation: remover_seccion 1s linear 1; 
   -webkit-animation-fill-mode:forwards;
 }
 
@@ -1087,7 +1087,7 @@ section.remover_seccion{
 
 
 nav.centrar_seccionPpal_menu{
-  -webkit-animation: centrar_seccionPpal_menu 1s 1; 
+  -webkit-animation: centrar_seccionPpal_menu 1s linear 1; 
   -webkit-animation-fill-mode:forwards;
 }
 
@@ -1103,7 +1103,7 @@ nav.centrar_seccionPpal_menu{
 }
 
 nav.origen_seccionPpal_menu{
-  -webkit-animation: origen_seccionPpal_menu 1s 1; 
+  -webkit-animation: origen_seccionPpal_menu 1s linear 1; 
   -webkit-animation-fill-mode:forwards;
 }
 
@@ -1120,7 +1120,7 @@ nav.origen_seccionPpal_menu{
 
 
 section.centrar_seccionPpal{
-  -webkit-animation: centrar_seccionPpal 1s 1; 
+  -webkit-animation: centrar_seccionPpal 1s linear 1; 
   -webkit-animation-fill-mode:forwards;
 }
 
@@ -1137,7 +1137,7 @@ section.centrar_seccionPpal{
 
 
 section.origen_seccionPpal{
-  -webkit-animation: origen_seccionPpal 1s 1; 
+  -webkit-animation: origen_seccionPpal 1s linear 1; 
   -webkit-animation-fill-mode:forwards;
 }
 
