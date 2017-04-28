@@ -22,7 +22,7 @@
           <li class='boton' ng-click="ver_seccion('resumen')"><a  >RESUMEN</a></li>
           <li class='boton' ng-click="ver_seccion('habilidades')"><a  >HABILIDADES</a></li>
           <li class='boton' ng-click="ver_seccion('portafolio')"><a  >PORTAFOLIO</a></li>
-          <li class='boton' ng-click="ver_seccion('contacto');mapa();"><a  >CONTACTO</a></li>
+          <li class='boton' ng-click="ver_seccion('contacto');"><a  >CONTACTO</a></li>
         </ul>
       </nav> 
       <section id="home"> 
@@ -171,7 +171,7 @@
     <section id="contacto" ng-if="ocultarSeccion==seccionActiva"> 
       <div class='contenedor_section'>
         <h2 class="titulo_seccion"><strong>Contacto</strong></h2>
-          <div id="map"></div>
+          <div id="map"><ng-map center="[ 5.0698307,  -75.5173124]"></ng-map></div>
           <form name='form_enviar_correo'>
             <h4 class="contacto_subtitulo"><i class="fa fa-map"></i>&nbsp;   Dirección</h4>
             <p class='texto-seccion'>Manizales(Caldas-Colombia)</p>

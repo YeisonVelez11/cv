@@ -1,4 +1,4 @@
-angularRoutingApp.controller('homeController', function($scope,$state,$http,$timeout,$window){
+angularRoutingApp.controller('homeController', function($scope,$state,$http,$timeout,$window,alerta,preload){
 $scope.portafolio=false;
 if($window.innerWidth<992){
 	$scope.ocultarSeccion=true;
@@ -20,17 +20,22 @@ else{
 		document.getElementById('video').currentTime = 0;
 	}
 	var timeout=15000;
+
 	$scope.enviarCorreo= function(){
-		alert("Enviar correo");
+		preload.on();
 		$http({
             method: 'GET',
             url: 'php/enviarCorreo.php?nombre='+$scope.nombre+"&email="+$scope.email+"&asunto="+$scope.asunto+"&mensaje="+$scope.mensaje,
             data: {"prueba":"prueba"},
             timeout: timeout
         }).then(function(data) {
+           preload.off();
+		   alerta.fn_generarPopup('exito','Se ha enviado tu correo, me pondré en contacto contigo en cuanto pueda. Muchas gracias!')
            console.log(data.data)
         },function(data) {
+             preload.off();
              console.log(data)
+             alerta.fn_generarPopup('error','No se ha podido enviar tu correo,por favor intentalo de nuevo más tarde!')
         });
 	}
 	$scope.aMedia=
@@ -161,13 +166,8 @@ else{
 			}
 		})	
 
-	}/*
-	var map = new google.maps.Map(document.getElementById('map'), {
-		  center: {lat: 5.0698307, lng: -75.5173124},
-		  scrollwheel: false,
-		  zoom: 15
-		});
-		 google.maps.event.trigger(map, "resize");
-		
-      */
+	}
+
+
+
 });

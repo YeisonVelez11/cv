@@ -1,5 +1,5 @@
 // Creación del módulo
-var angularRoutingApp = angular.module('bios', ['ui.router', 'ngAnimate', 'ngSanitize','ui.swiper', 'bios.utilidades','bios.validaciones','bios.CustomDirective']);
+var angularRoutingApp = angular.module('bios', ['ui.router', 'ngAnimate', 'ngSanitize','ui.swiper','ngMap', 'bios.utilidades','bios.validaciones','bios.CustomDirective']);
 
 //trigger al cambiar de vista para validar loggin
 
