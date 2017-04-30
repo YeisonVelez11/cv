@@ -146,17 +146,17 @@ else{
 				}
 			}
 			else{
-				angular.forEach(document.querySelectorAll("section"), function(value, key){
-			    	if(value.id!="home"){
+					angular.forEach(document.querySelectorAll("section"), function(value, key){
+				    	if(value.id!="home" && document.getElementById("home").classList.value!="" ){
 
-			    		document.getElementById(value.id).classList.remove('mostrar_seccion');
-			    		document.getElementById(value.id).classList.add('transicion_alaldo_home');	
+				    		document.getElementById(value.id).classList.remove('mostrar_seccion');
+				    		document.getElementById(value.id).classList.add('transicion_alaldo_home');	
 
-			    	}
-				})
-
+				    	}
+					})
 
 				if(document.getElementById("home").classList.value!=""){
+
 					document.getElementById("home").classList.remove('origen_seccionPpal');
 					document.getElementById("menu").classList.remove('origen_seccionPpal_menu');
 
