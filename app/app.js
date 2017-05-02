@@ -1,5 +1,5 @@
 // Creación del módulo
-var angularRoutingApp = angular.module('bios', ['ui.router', 'ngAnimate', 'ngSanitize','ui.swiper','ngMap', 'bios.utilidades','bios.validaciones','bios.CustomDirective']);
+var angularRoutingApp = angular.module('yeison', ['ui.router', 'ngAnimate', 'ngSanitize','ui.swiper','ngMap', 'ngScrollable','yeison.utilidades','yeison.validaciones','yeison.CustomDirective']);
 
 //trigger al cambiar de vista para validar loggin
 

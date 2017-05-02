@@ -1,4 +1,4 @@
-angular.module("bios.commons", [])
+angular.module("yeison.commons", [])
 
 /**
  * @ngdoc service

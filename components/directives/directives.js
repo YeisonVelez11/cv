@@ -2,7 +2,7 @@
 
 //bueno
 
-angular.module("bios.CustomDirective", [])
+angular.module("yeison.CustomDirective", [])
 
 
 .directive("nombreDirectiva", function() {

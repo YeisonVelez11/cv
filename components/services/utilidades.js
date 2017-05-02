@@ -1,5 +1,5 @@
 var timeout=1500;
-angular.module("bios.utilidades", [])
+angular.module("yeison.utilidades", [])
 
 .factory("http", function($http, ErrorPeticion) 
 {

@@ -1,4 +1,4 @@
-angular.module("bios.validaciones", [])
+angular.module("yeison.validaciones", [])
 
 /**
  * @ngdoc service

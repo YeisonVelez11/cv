@@ -8,6 +8,7 @@
       <i class="fa fa-times" aria-hidden="true"  ng-click="fn_cerrarPortalio()" ></i>
        <video id="video" controls="false"  ng-class='transicion'>
         <source  type="video/mp4">
+            <source src="somevideo.mov" type="video/mov">
           Your browser does not support the video tag.
         </video> 
     </div>
@@ -43,7 +44,7 @@
       </div>
     </section>
 
-    <section id="resumen" ng-if="ocultarSeccion==seccionActiva">  
+    <section id="resumen" ng-if="ocultarSeccion==seccionActiva" ng-scrollable >  
       <div class='contenedor_section'>
         <h2 class="titulo_seccion"><strong>Resumen</strong></h2>
         <a class='boton'><i class="fa fa-download" aria-hidden="true"></i> DESCARGAR MI RESUMEN</a>
@@ -104,7 +105,7 @@
       </div>
     </section>
 
-    <section id="habilidades" ng-if="ocultarSeccion==seccionActiva"> 
+    <section id="habilidades" ng-if="ocultarSeccion==seccionActiva" ng-scrollable> 
       <div class='contenedor_section'>
         <h2 class="titulo_seccion"><strong>Habilidades</strong></h2>
         <h3 class="titulo_habilidades"><i class="fa fa-users"></i>&nbsp;&nbsp; Professional Skills</h3>
@@ -146,7 +147,7 @@
       </div>
     </section>
 
-    <section id="portafolio" ng-if="ocultarSeccion==seccionActiva"> 
+    <section id="portafolio" ng-if="ocultarSeccion==seccionActiva" ng-scrollable> 
    
     
       <div class='contenedor_section'>
@@ -168,7 +169,7 @@
       </div>
     </section>
 
-    <section id="contacto" ng-if="ocultarSeccion==seccionActiva"> 
+    <section id="contacto" ng-if="ocultarSeccion==seccionActiva" ng-scrollable> 
       <div class='contenedor_section'>
         <h2 class="titulo_seccion"><strong>Contacto</strong></h2>
           <div id="map"><ng-map center="[ 5.0698307,  -75.5173124]"></ng-map></div>

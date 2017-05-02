@@ -1,18 +1,18 @@
 angularRoutingApp.controller('homeController', function($scope,$state,$http,$timeout,$window,alerta,preload){
-$scope.portafolio=false;
-if($window.innerWidth<992){
-	$scope.ocultarSeccion=true;
-	$scope.seccionActiva=true;
 
-}
-else{
-	$scope.ocultarSeccion=false;
-	$scope.seccionActiva='';
-}
-	
-	
+	$scope.$emit('content.changed');
 
+	$scope.portafolio=false;
+	if($window.innerWidth<992){
+		$scope.ocultarSeccion=true;
+		$scope.seccionActiva=true;
 
+	}
+	else{
+		$scope.ocultarSeccion=false;
+		$scope.seccionActiva='';
+	}
+		
 
 	$scope.fn_cerrarPortalio= function(){
 		$scope.portafolio=false;
@@ -51,24 +51,32 @@ else{
 		"titulo":"tutorial",
 		"video":"videos/video2.mp4",
 		"imagen":"img/clicsalud.jpg"
-	   }				   
-	];
-
-	/*$scope.aTestimonio=
-	[
-	   {
-		"nombre":"Jorge Hernán Franco.",
-		"cargo":"Coordinador de prácticas Universidad de Manizales<",
-		"foto":"img/yeison.jpg",
-		"opinion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, ipsum repellat. Aut nobis, saepe perferendis consequatur dignissimos ullam provident, soluta veniam asperiores atque. Eius tempore praesentium quod ipsa, odio voluptate."
+	   },
+	   	   {
+		"descripcion":"App para acercar  usuarios al sistema de salud.",
+		"titulo":"clicsalud",
+		"video":"videos/Clicsalud.mp4",
+		"imagen":"img/clicsalud.jpg"
 	   },
 	   {
-		"nombre":"Esteban correa",
-		"cargo":"Coordinador de prácticas Universidad de Manizales<",
-		"foto":"img/yeison.jpg",
-		"opinion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, ipsum repellat. Aut nobis, saepe perferendis consequatur dignissimos ullam provident, soluta veniam asperiores atque. Eius tempore praesentium quod ipsa, odio voluptate."
+		"descripcion":"TUtorial para amigos.",
+		"titulo":"tutorial",
+		"video":"videos/video2.mp4",
+		"imagen":"img/clicsalud.jpg"
+	   },
+	   	   {
+		"descripcion":"App para acercar  usuarios al sistema de salud.",
+		"titulo":"clicsalud",
+		"video":"videos/Clicsalud.mp4",
+		"imagen":"img/clicsalud.jpg"
+	   },
+	   {
+		"descripcion":"TUtorial para amigos.",
+		"titulo":"tutorial",
+		"video":"videos/video2.mp4",
+		"imagen":"img/clicsalud.jpg"
 	   }				   
-	];*/
+	];
 
 	//indice del contenido
 	$scope.index=-1;
