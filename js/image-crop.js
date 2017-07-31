@@ -969,7 +969,7 @@
 		  function loadImage(base64ImageSrc) {
 		  
 			//get the EXIF information from the image
-            var byteString = atob(base64ImageSrc.split(',')[1]);
+         /*   var byteString = atob(base64ImageSrc.split(',')[1]);
             var binary = new BinaryFile(byteString, 0, byteString.length);
             exif = EXIF.readFromBinaryFile(binary);		  
            
@@ -986,12 +986,9 @@
 				}
 				
 			}).then(function(base64ImageSrc) {
-			
-				$img.src = base64ImageSrc;
-				
-			}).catch(function(error) {							
-				console.log(error);				
-			});    
+			*/
+				return $img.src = base64ImageSrc;
+	
 			
 		  };
 		  
