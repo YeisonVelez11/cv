@@ -8,7 +8,6 @@ angular.module("yeison.validaciones", [])
  * Servicio para generar validaciones a los formularios.
  **/
 
-
 .factory('validacionCampos', function() {
 
         var oValidacionCampos={mensaje:"", validacion:false};
@@ -27,15 +26,14 @@ angular.module("yeison.validaciones", [])
   maxlength=number<br>
   date<br>
   email<br>
-  numeric<br>
-  minlength<br>
+  numeric | numeric=int<br><br>
   equalto=string
   different=string
   range=numer1-number2
   domain_email=domain (ej bios.co)
   checkbox_min=number
   checkbox_max=number
-
+  password [needs 1 Capital Letter, 1 Especial caracter, 1 Number, 6 characters]
   </pre>
   se debe incluir en el campo los siguientes atributos ej:
   <pre><a  href='#' editable-text='user.name' e-label='User Name' onbeforesave='validacion.fn_getCamposEditables(this['$editable'].attrs.validacion, $data)'' validacion='required'>{{user.name}}</a></pre>
@@ -61,7 +59,7 @@ angular.module("yeison.validaciones", [])
                         var mensaje=required[1];
                        }
                        else{
-                        mensaje="El campo debe ser requerido";
+                        mensaje="El campo es requerido";
                        }
                        if(data=="" || data==null || data==undefined){
                            oValidacionCampos.mensaje=mensaje;
@@ -78,18 +76,39 @@ angular.module("yeison.validaciones", [])
                     }   
 
 
-                    if(aValidacion[i]=="numeric"){
+                   /* if(aValidacion[i]=="numeric"){
 
                            if( !Number.isInteger(parseInt(data)) ) {
                                oValidacionCampos.mensaje="Debe ingresar un valor númerico";
                                return oValidacionCampos.mensaje;
                            }
+                    }*/
+
+
+                    if(aValidacion[i].search("numeric")!=-1){
+                      var numeric=aValidacion[i].split("=");
+                       if(numeric.length>1){
+                        if(numeric[1]=="int"){
+                         if(Number.isInteger(Number(data))==false){
+                            oValidacionCampos.mensaje="Debe ingresar un número entero";
+                            return oValidacionCampos.mensaje;
+                         }
+                        }
+                       }
+                       else{
+                        if( !Number.isInteger(parseInt(data)) ) {
+                          oValidacionCampos.mensaje="Debe ingresar un valor númerico";
+                          return oValidacionCampos.mensaje;
+                        }
+                       }
+
                     }
+
 
                     if(aValidacion[i].search("minlength")!=-1) {
                            var min=aValidacion[i].split("=");
-                           if( !(parseInt(min[1])==data.length))   {
-                               oValidacionCampos.mensaje="Debe ingresar un valor de "+min[1]+ " "+"cáracteres";
+                           if( !(parseInt(min[1])<=data.length))   {
+                               oValidacionCampos.mensaje="Debe ingresar un valor mínimo de "+min[1]+ " "+"caracteres";
                                return oValidacionCampos.mensaje;
                            }
                             
@@ -103,6 +122,16 @@ angular.module("yeison.validaciones", [])
 
                            }
                             
+                    }
+
+                    if(aValidacion[i].search("password")!=-1) {
+                      var containsDigits = /[0-9]/.test(data)
+                      var containsUpper = /[A-Z]/.test(data)
+                      var containSpecial= !/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\:<>\?]/g.test(data);
+                           if( containsDigits==false || containsUpper==false || data.length<=5 || containSpecial==true)   {
+                               oValidacionCampos.mensaje="Debe contener al menos un carácter en mayúscula,un número y un carácter especial";
+                               return oValidacionCampos.mensaje;
+                           } 
                     }
 
                     if(aValidacion[i].search("date")!=-1) {
@@ -136,8 +165,8 @@ angular.module("yeison.validaciones", [])
                             
                            var cadena=aValidacion[i].split("=");
                            var rango=cadena[1].split("-");
-                           var iData=parseInt(data);
-                           if( !(  ( (iData>=parseInt(rango[0]) ) && ( iData<=parseInt(rango[1]))) ) )   {
+                           var iData=parseFloat(data);
+                           if( !(  ( (iData>=parseFloat(rango[0]) ) && ( iData<=parseFloat(rango[1]))) ) )   {
                                oValidacionCampos.mensaje="El valor debe estar entre "+ rango[0] +" y "+ rango[1];
                                return oValidacionCampos.mensaje;
                            }
@@ -173,3 +202,4 @@ angular.module("yeison.validaciones", [])
         }*/
     return oValidacionCampos;
 })
+

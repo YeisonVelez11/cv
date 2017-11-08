@@ -41,6 +41,7 @@ angular.module("yeison.CustomDirective", [])
              //console.log(attrs,val,element,false)
          })
 
+
         scope.fn_ValidarTodo= function(sFormActive){
 
                 var form=fn_getForm(sFormActive);
@@ -127,7 +128,7 @@ angular.module("yeison.CustomDirective", [])
                     var elemento_eliminar=(angular.element((document.getElementById('error'+sNombreModel ))));
                     elemento_eliminar.remove();
                     if(mostar_error==true){
-                        var newDirective = angular.element('<div id="error'+sNombreModel+'"'+ ' class="span_wrong" style="display:block;margin-top:5px;">'+error+'</div>');
+                        var newDirective = angular.element('<div id="error'+sNombreModel+'"'+ ' class="span_wrong" style="display:block;margin-top:3px;margin-bottom: 5px;">'+error+'</div>');
                         var final_checkbox = angular.element(oCheckbox);
                         final_checkbox.parent().after(newDirective); //se genera despues del label o span
                         $compile(newDirective)(scope);
@@ -155,7 +156,7 @@ angular.module("yeison.CustomDirective", [])
                         var elemento_eliminar=(angular.element((document.getElementById('error'+name ))));
                         elemento_eliminar.remove();
                         if(mostar_error==true){
-                            var newDirective = angular.element('<div id="error'+name+'"'+ ' class="span_wrong" style="display:block;margin-top:5px;">'+"Debes seleccionar una opción"+'</div>');
+                            var newDirective = angular.element('<div id="error'+name+'"'+ ' class="span_wrong" style="display:block;margin-top:5px;margin-bottom: 5px;">'+"Debes seleccionar una opción"+'</div>');
                              var final_radio = angular.element(oradio);
                             final_radio.parent().after(newDirective);
                             $compile(newDirective)(scope);
@@ -193,7 +194,7 @@ angular.module("yeison.CustomDirective", [])
                             elemento_eliminar.remove();  
                             var error="Debes seleccionar un archivo";
                             element.addClass("input_wrong");
-                            var newDirective = angular.element('<div id="error'+sNombreModel+'"'+ ' class="span_wrong" style="display:block;margin-top:5px;">'+error+'</div>');
+                            var newDirective = angular.element('<div id="error'+sNombreModel+'"'+ ' class="span_wrong" style="display:block;margin-top:5px;    margin-bottom: 5px;">'+error+'</div>');
                             element.after(newDirective);
                             $compile(newDirective)(scope);
                        }
@@ -220,7 +221,7 @@ angular.module("yeison.CustomDirective", [])
                     elemento_eliminar.remove();
                     if(mostar_error==true){
                         element.addClass("input_wrong");
-                        var newDirective = angular.element('<div id="error'+sNombreModel+'"'+ ' class="span_wrong" style="display:block;margin-top:5px;">'+validacion+'</div>');
+                        var newDirective = angular.element('<div id="error'+sNombreModel+'"'+ ' class="span_wrong" style="display:block;margin-top:5px;    margin-bottom: 5px;">'+validacion+'</div>');
                         element.after(newDirective);
                         $compile(newDirective)(scope);
                     }
@@ -345,7 +346,7 @@ size(en bytes 15000000 = 15mb)
                             element.addClass("input_wrong");
                             var elemento_eliminar=(angular.element((document.getElementById('error'+sNombreModel ))));
                             elemento_eliminar.remove();
-                            var newDirective = angular.element('<div id="error'+sNombreModel+'"'+ ' class="span_wrong" style="margin-top:5px;">'+error +'</div>');
+                            var newDirective = angular.element('<div id="error'+sNombreModel+'"'+ ' class="span_wrong" style="margin-top:5px;     margin-bottom: 5px;">'+error +'</div>');
                             element.after(newDirective) ;
                             $compile(newDirective)(scope);
                        }
@@ -359,7 +360,7 @@ size(en bytes 15000000 = 15mb)
     };
 })
 
-.directive('resize', ['$window', function ($window) {
+.directive('resize', ['$window','$timeout', function ($window,$timeout) {
      return {
         link: link,
         restrict: 'A'           
@@ -369,13 +370,39 @@ size(en bytes 15000000 = 15mb)
         
             function onResize(){
                 // uncomment for only fire when $window.innerWidth change   
-                scope.ocultarSeccion="333"
                 if (scope.width !== $window.innerWidth)
                 {
                     scope.width = $window.innerWidth;
-                    if(scope.width<992){
-                        scope.seccionActiva=true;
-                        scope.ocultarSeccion=true;
+                    if(scope.width>992){
+                        if(scope.seccion!="home" && scope.seccion!=""){
+                            angular.element( document.querySelector( '#menu' ) ).addClass('centrar_seccionPpal_menu');
+                            angular.element( document.querySelector( '#'+scope.seccion ) ).addClass('otrasSecciones');
+                            angular.element( document.querySelector( '#home' ) ).addClass('centrar_seccionPpal');
+                            if(scope.seccion=='resumen'){
+                                $timeout(function(){
+                                 scope.seccion='';
+                                })
+                                $timeout(function(){
+                                 scope.seccion='resumen';
+                                },1000)
+                            }
+                        }
+
+                    }
+                    else{
+                        if(scope.seccion=='resumen'){
+                            $timeout(function(){
+                             scope.seccion='';
+                            })
+                            $timeout(function(){
+                             scope.seccion='resumen';
+                            },1000)
+                        }
+
+
+                        angular.element( document.querySelector( '#menu' ) ).removeClass('centrar_seccionPpal_menu');
+                        angular.element( document.querySelector( '#home' ) ).removeClass('centrar_seccionPpal');
+                        angular.element( document.querySelector( '.section.otrasSecciones' ) ).removeClass('otrasSecciones');
                     }
                     scope.$digest();
                 }

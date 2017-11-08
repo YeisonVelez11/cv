@@ -6,35 +6,37 @@
     </div>
     <div class='contendor_portafolio' ng-show="portafolio">
       <i class="fa fa-times" aria-hidden="true"  ng-click="fn_cerrarPortalio()" ></i>
-       <video id="video" controls="false"  ng-class='transicion'>
+       <!--<video id="video" controls="false"  ng-class='transicion'>
         <source  type="video/mp4">
             <source src="somevideo.mov" type="video/mov">
           Your browser does not support the video tag.
-        </video> 
+        </video>--> 
+        <img id="video" ng-src="{{preview}}" />
     </div>
     <div class='fondo_portafolio' ng-show="portafolio" ng-click="fn_cerrarPortalio()">  </div>
 
 
   <div id='contenedor_todo' resize> 
-      
-      <nav id="menu">
+      <!-- ng-class="centrarmenu"-->
+      <nav id="menu" >
         <ul>  
-          <li class='boton' ng-click="ver_seccion('home')"><a  >INICIO</a></li>
-          <li class='boton' ng-click="ver_seccion('resumen')"><a  >RESUMEN</a></li>
-          <li class='boton' ng-click="ver_seccion('habilidades')"><a  >HABILIDADES</a></li>
-          <li class='boton' ng-click="ver_seccion('portafolio')"><a  >PORTAFOLIO</a></li>
-          <li class='boton' ng-click="ver_seccion('contacto');"><a  >CONTACTO</a></li>
+          <li class='boton boton-home' ng-click='fn_home()'><a  >INICIO</a></li>
+          <li class='boton boton-link' ng-click="ver_seccion('resumen')"><a  >RESUMEN</a></li>
+          <li class='boton boton-link' ng-click="ver_seccion('habilidades')"><a  >HABILIDADES</a></li>
+          <li class='boton boton-link' ng-click="ver_seccion('portafolio')"><a  >PORTAFOLIO</a></li>
+          <li class='boton boton-link' ng-click="ver_seccion('contacto');"><a  >CONTACTO</a></li>
         </ul>
       </nav> 
-      <section id="home"> 
+      <section id="home"  > 
       <div class='contenedor_section'>
-        <figure class='figure_circulo'>
-          <img  class='foto_circulo' src='img/yeison.jpg' />
+        <figure id='imagen_personal'  class='figure_circulo opacity_default mostrar_foto'>
+         
+          <img  class='foto_circulo' ng-src='{{imagen_personal}}' />
         </figure>
         <p id="profile">Hola! Soy <strong>Yeison Velez!</strong></p>
         <p class='profile-subtitle'>Desarrollador WEB Front-End</p>
         <hr class='hr'>
-        <p class='intro'>Ingeniero en Sistemas y Telecomunicaciones con enfoque al desarrollo front-end, desde el punto de vista de funcionalidad, con capacidad de aprender y adaptarse a nuevas técnologias.</p>
+        <p class='intro'>Ingeniero en Sistemas y Telecomunicaciones con enfoque al desarrollo front-end, desde el punto de vista de funcionalidad. Facilidad de aprender y adaptarse a nuevas tecnologías.</p>
         <p class='parrafo_boton'>email: yeison_velez11@hotmail.com / Cel: 3002797900</p>
         <div class='botones_rs'>
           <a href='https://www.facebook.com/yeison.velez.11' target="_blank"><i class="fa fa-facebook"></i></a>
@@ -44,60 +46,54 @@
       </div>
     </section>
 
-    <section id="resumen" ng-if="ocultarSeccion==seccionActiva" ng-scrollable >  
+    <section id="resumen"  class='section'  ng-scrollable >  
       <div class='contenedor_section'>
         <h2 class="titulo_seccion"><strong>Resumen</strong></h2>
-        <a class='boton'><i class="fa fa-download" aria-hidden="true"></i> DESCARGAR MI RESUMEN</a>
+        <a class='boton' href='cv2017.pdf' target="_BLANK"><i class="fa fa-download" aria-hidden="true"></i> DESCARGAR MI RESUMEN</a>
         <div>
           <h2 class='subtitulo_seccion'><i class="fa fa-university" aria-hidden="true"></i>  Educación</h2>
-          <div class='resumen-item'>
-            <h3 class='titulo-item'>titulo item</h3>
-            <h4 class='titulo-pie'>empece en y termine en</h4>
-            <p class='texto-seccion'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, earum animi impedit, qui nobis repudiandae natus omnis deleniti excepturi itaque similique saepe. Sequi animi dolorum eum tenetur fugiat sed molestias!</p>
+          <div class='resumen-item' ng-repeat='item in educacion'>
+            <h3 class='titulo-item'>{{item.nombre}}</h3>
+            <h4 class='titulo-pie'>{{item.periodo}}</h4>
+            <p class='texto-seccion'>{{item.institucion}}</p>
           </div>
         </div>
         <div>
           <h2 class='subtitulo_seccion'><i class="fa fa-flag" aria-hidden="true"></i>  Experiencia</h2>
-          <div class='resumen-item'>
-            <h3 class='titulo-item'>titulo item</h3>
-            <h4 class='titulo-pie'>empece en y termine en</h4>
-            <p class='texto-seccion'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, earum animi impedit, qui nobis repudiandae natus omnis deleniti excepturi itaque similique saepe. Sequi animi dolorum eum tenetur fugiat sed molestias!</p>
+          <div class='resumen-item' ng-repeat='item in experiencia'>
+            <h3 class='titulo-item'>{{item.nombre}}</h3>
+            <h4 class='titulo-pie'>{{item.tiempo}}</h4>
+            <p class='texto-seccion'>{{item.funcion}}</p>
           </div>
         </div>
+
+        <div>
+          <h2 class='subtitulo_seccion'><i class="fa fa-trophy" aria-hidden="true"></i>  Distinciones</h2>
+          <div class='resumen-item' ng-repeat='item in distinciones'>
+            <p class='texto-seccion'>{{item.distincion}}</p>
+          </div>
+        </div>
+
         <div>
           <h2 class='subtitulo_seccion'><i class="fa fa-commenting" aria-hidden="true"></i>  Testimonios</h2>
-         <swiper>
-          <slides>
+         <swiper ng-if="seccion=='resumen'">
+          <slides >
 
-            <slide>
+            <slide ng-repeat="item in testimonios">
               <div class='testimonio'>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aut veritatis quibusdam fugiat quaerat nostrum distinctio iste quos necessitatibus. Sint ipsa iure, doloremque eligendi. Tempore corporis iusto aut fugit ratione.
+                    {{item.testimonio}}
                 </p>
               </div>
               <figure class='figure_circulo_peque'>
-               <img class='foto_circulo' src='img/yeison.jpg' />
+               <img class='foto_circulo' ng-src='{{item.imagen}}' />
               </figure>
-              <div class='nombre'>Jorge Hernán Franco</div>
-              <div class='cargo'>Coordinador de prácticas Universidad de Manizales</div>
+              <div class='nombre'>{{item.nombre}}</div>
+              <div class='cargo'>{{item.cargo}}</div>
             </slide>
-            <slide>
-              <div class='testimonio'>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aut veritatis quibusdam fugiat quaerat nostrum distinctio iste quos necessitatibus. Sint ipsa iure, doloremque eligendi. Tempore corporis iusto aut fugit ratione.
-                </p>
-              </div>
-              <figure class='figure_circulo_peque'>
-               <img class='foto_circulo' src='img/yeison.jpg' />
-              </figure>
-              <div class='nombre'>Jorge Hernán Franco</div>
-              <div class='cargo'>Coordinador de prácticas Universidad de Manizales</div>
-           </slide>
+          
           </slides>
-          <!--<prev>
-          </prev>
-          <next></next>-->
-          <pagination></pagination>
+      <pagination></pagination>
         </swiper>
         <div class='hr_footer'></div>
         <div class='footer-quote'>El mejor Camino para predecir el futuro, es creádolo..</div>
@@ -105,54 +101,108 @@
       </div>
     </section>
 
-    <section id="habilidades" ng-if="ocultarSeccion==seccionActiva" ng-scrollable> 
+    <section id="habilidades" class='section' ng-scrollable> 
       <div class='contenedor_section'>
         <h2 class="titulo_seccion"><strong>Habilidades</strong></h2>
-        <h3 class="titulo_habilidades"><i class="fa fa-users"></i>&nbsp;&nbsp; Professional Skills</h3>
+        <h3 class="titulo_habilidades"><i class="fa fa-users"></i>&nbsp;&nbsp; Habilidades profesionales</h3>
           <div class='seccion_barras'>
             <div class="barra_fondo">
-              <span class='barra_indicador'>70%</span>
+              <span class='barra_indicador'>100%</span>
+              <span class='barra_label'>Responsabilidad</span>
+            <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:100%"></div>
+            </div>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>80%</span>
               <span class='barra_label'>Comunicación</span>
-            <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:70%"></div>
+            <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:80%"></div>
             </div>
             <div class="barra_fondo">
               <span class='barra_indicador'>100%</span>
-              <span class='barra_label'>Expresión</span>
-            <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:100%"></div>
-            </div>
-            <div class="barra_fondo">
-              <span class='barra_indicador'>0%</span>
-              <span class='barra_label'>Hermosura</span>
-            <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:0%"></div>
+              <span class='barra_label'>Pasión</span>
+            <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:100%"></div>
             </div> 
-          </div>
-          <h3 class="titulo_habilidades"><i class="fa fa-laptop"></i>&nbsp;&nbsp; Codigo</h3>
-          <div class='seccion_barras'>
             <div class="barra_fondo">
               <span class='barra_indicador'>70%</span>
-              <span class='barra_label'>Comunicación</span>
+              <span class='barra_label'>Inglés técnico</span>
             <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:70%"></div>
             </div>
+          </div>
+          <h3 class="titulo_habilidades"><i class="fa fa-laptop"></i>&nbsp;&nbsp; Front-End</h3>
+          <div class='seccion_barras'>
             <div class="barra_fondo">
-              <span class='barra_indicador'>70%</span>
-              <span class='barra_label'>Comunicación</span>
-            <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:85%"></div>
+              <span class='barra_indicador'>90%</span>
+              <span class='barra_label'>Javascript</span>
+            <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:90%"></div>
             </div>
             <div class="barra_fondo">
               <span class='barra_indicador'>70%</span>
-              <span class='barra_label'>Comunicación</span>
-            <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:85%"></div>
+              <span class='barra_label'>CSS3</span>
+            <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:70%"></div>
+            </div>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>95%</span>
+              <span class='barra_label'>HTML</span>
+            <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:95%"></div>
             </div> 
+            <div class="barra_fondo">
+              <span class='barra_indicador'>90%</span>
+              <span class='barra_label'>Angular.js</span>
+            <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:90%"></div>
+            </div>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>80%</span>
+              <span class='barra_label'>Bootstrap, jquery.js, wow.js, prefixfree.js etc..</span>
+            <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:80%"></div>
+            </div> 
+            <div class="barra_fondo">
+              <span class='barra_indicador'>60%</span>
+              <span class='barra_label'>D3.js - C3.js</span>
+            <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:60%"></div>
+            </div>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>60%</span>
+              <span class='barra_label'>Three.js</span>
+            <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:60%"></div>
+            </div>
           </div>
+
+          <h3 class="titulo_habilidades"><i class="fa fa-laptop"></i>&nbsp;&nbsp; Back-End</h3>
+          <div class='seccion_barras'>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>60%</span>
+              <span class='barra_label'>Node.js</span>
+            <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:60%"></div>
+            </div>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>50%</span>
+              <span class='barra_label'>MongoDB</span>
+            <div class="barra_llenado barra_llenado_color2 barra_borde" style="width:50%"></div>
+            </div>
+            <div class="barra_fondo">
+              <span class='barra_indicador'>80%</span>
+              <span class='barra_label'>MYSQL - POSTGRESQL</span>
+            <div class="barra_llenado barra_llenado_color3 barra_borde" style="width:80%"></div>
+            </div> 
+            <div class="barra_fondo">
+              <span class='barra_indicador'>70%</span>
+              <span class='barra_label'>PHP</span>
+            <div class="barra_llenado barra_llenado_color1 barra_borde" style="width:70%"></div>
+            </div>
+            <div class='hr_footer'></div>
+            <div class='footer-quote'>La pasión por lo que hago es mi principal motivación para mejorar cada dia, y aportar mi grano de arena para mejorar la empresa que represente.</div>
+          </div>
+
       </div>
     </section>
 
-    <section id="portafolio" ng-if="ocultarSeccion==seccionActiva" ng-scrollable> 
+    <section id="portafolio"  class='section' ng-scrollable> 
    
     
       <div class='contenedor_section'>
         <h2 class="titulo_seccion"><strong>PORTAFOLIO</strong></h2>
         <div>
+        <p class='texto-seccion'>Apoyo en los aplicativos:</p>
+
          <div ng-repeat="media in aMedia" class="contenedor_imagenes_portafolio"> 
           <a href='' ng-click="fn_transicion($index)">
             <figure class='figure_portafolio'>
@@ -169,10 +219,10 @@
       </div>
     </section>
 
-    <section id="contacto" ng-if="ocultarSeccion==seccionActiva" ng-scrollable> 
+    <section id="contacto" class='section' ng-scrollable > 
       <div class='contenedor_section'>
         <h2 class="titulo_seccion"><strong>Contacto</strong></h2>
-          <div id="map"><ng-map center="[ 5.0698307,  -75.5173124]"></ng-map></div>
+          <div id="map" style='z-index:88888'><ng-map center="[ 5.0698307,  -75.5173124]"></ng-map></div>
           <form name='form_enviar_correo'>
             <h4 class="contacto_subtitulo"><i class="fa fa-map"></i>&nbsp;   Dirección</h4>
             <p class='texto-seccion'>Manizales(Caldas-Colombia)</p>
