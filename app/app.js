@@ -5,10 +5,10 @@ var angularRoutingApp = angular.module('yeison', ['ui.router', 'ngAnimate', 'ngS
 
 // Configuración de las rutas
 angularRoutingApp.config(function($stateProvider, $urlRouterProvider) {
-$urlRouterProvider.otherwise("/home");
+$urlRouterProvider.otherwise("/");
 $stateProvider
     .state('home', {
-      url: "/home",
+      url: "/",
       templateUrl: 'templates/home.html',
       controller: 'homeController'
     })

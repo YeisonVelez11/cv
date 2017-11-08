@@ -159,7 +159,7 @@ angularRoutingApp.controller('homeController', function($scope,$state,$http,$tim
 		"descripcion":"Recopilación, seguimiento y estadística del uso de la app clicsalud",
 		"titulo":"Portal Clicsalud",
 		"video":"img/portal clicsalud.gif",
-		"imagen":"img/portal clicsalud.png"
+		"imagen":"img/portal clicsalud.PNG"
 	   },
 	   {
 		"descripcion":"Análisis de sentimiento en PQRS en el sector salud",
@@ -171,13 +171,13 @@ angularRoutingApp.controller('homeController', function($scope,$state,$http,$tim
 		"descripcion":"APP para identificación de flores mediante la captura fotográfica",
 		"titulo":"e-Flora",
 		"video":"img/e-flora.gif",
-		"imagen":"img/eflora.jpg"
+		"imagen":"img/eflora.JPG"
 	   },
 	   {
 		"descripcion":"APP para medir el éxito de pacientes que se someten a intervención bariátrica",
 		"titulo":"Bariatrack",
 		"video":"img/bariatrack.gif",
-		"imagen":"img/bariatrack.jpg"
+		"imagen":"img/bariatrack.JPG"
 	   },
 	   {
 		"descripcion":"Red de empresas colombianas del sector BIO que se conectan para hacer negocios y proyectos.",
@@ -189,7 +189,7 @@ angularRoutingApp.controller('homeController', function($scope,$state,$http,$tim
 		"descripcion":"Portal para rendición de cuentas y entregables para el proyecto de Regalías",
 		"titulo":"Portal Regalías",
 		"video":"img/portal_regalias.gif",
-		"imagen":"img/portal_regalias.jpg"
+		"imagen":"img/portal_regalias.JPG"
 	   },
 	   {
 		"descripcion":"Portal informativo sobre procesos internos del área",
@@ -201,7 +201,7 @@ angularRoutingApp.controller('homeController', function($scope,$state,$http,$tim
 		"descripcion":"Lengua electrónica que analiza los alimentos e identifica su composición",
 		"titulo":"Neurolengua",
 		"video":"img/neurolengua.gif",
-		"imagen":"img/neurolengua.jpg"
+		"imagen":"img/neurolengua.JPG"
 	   },
 	   {
 		"descripcion":"App y portal para la generación del 'efecto morphing' entre un humano a un simio",
