@@ -147,85 +147,86 @@ angularRoutingApp.controller('homeController', function($scope,$state,$http,$tim
              alerta.fn_generarPopup('error','No se ha podido enviar tu correo,por favor intentalo de nuevo más tarde!')
         });
 	}
+
 	$scope.aMedia=
 	[
 	   {
 		"descripcion":"App para acercar  usuarios al sistema de salud.",
 		"titulo":"clicsalud",
-		"video":"img/clicsalud.gif",
+		"video":"img/clicsaludc.JPG",
 		"imagen":"img/clicsalud.jpg"
 	   },
 	   {
 		"descripcion":"Recopilación, seguimiento y estadística del uso de la app clicsalud",
 		"titulo":"Portal Clicsalud",
-		"video":"img/portal clicsalud.gif",
+		"video":"img/portal clicsaludc.JPG",
 		"imagen":"img/portal clicsalud.PNG"
 	   },
 	   {
 		"descripcion":"Análisis de sentimiento en PQRS en el sector salud",
 		"titulo":"NLP v1",
-		"video":"img/nlpv1.gif",
+		"video":"img/nlpv1c.JPG",
 		"imagen":"img/nlpv1.png"
 	   },
 	   {
 		"descripcion":"APP para identificación de flores mediante la captura fotográfica",
 		"titulo":"e-Flora",
-		"video":"img/e-flora.gif",
+		"video":"img/plantappc.JPG",
 		"imagen":"img/eflora.JPG"
 	   },
 	   {
 		"descripcion":"APP para medir el éxito de pacientes que se someten a intervención bariátrica",
 		"titulo":"Bariatrack",
-		"video":"img/bariatrack.gif",
+		"video":"img/bariatrackc.JPG",
 		"imagen":"img/bariatrack.JPG"
 	   },
 	   {
 		"descripcion":"Red de empresas colombianas del sector BIO que se conectan para hacer negocios y proyectos.",
 		"titulo":"BiotecRed",
-		"video":"img/biotecred.gif",
+		"video":"img/biotecredc.JPG",
 		"imagen":"img/logo_biotec.png"
 	   },
 	   {
 		"descripcion":"Portal para rendición de cuentas y entregables para el proyecto de Regalías",
 		"titulo":"Portal Regalías",
-		"video":"img/portal_regalias.gif",
+		"video":"img/portal_regaliasc.JPG",
 		"imagen":"img/portal_regalias.JPG"
 	   },
 	   {
 		"descripcion":"Portal informativo sobre procesos internos del área",
 		"titulo":"SisbioTV",
-		"video":"img/sisbio.gif",
-		"imagen":"img/sisbio.gif"
+		"video":"img/sisbiotvc.JPG",
+		"imagen":"img/sisbiotv.JPG"
 	   },
 	   {
 		"descripcion":"Lengua electrónica que analiza los alimentos e identifica su composición",
 		"titulo":"Neurolengua",
-		"video":"img/neurolengua.gif",
+		"video":"img/neurolenguac.JPG",
 		"imagen":"img/neurolengua.JPG"
 	   },
 	   {
 		"descripcion":"App y portal para la generación del 'efecto morphing' entre un humano a un simio",
 		"titulo":"Morphing App",
-		"video":"img/morphing.gif",
-		"imagen":"img/portal_morphing.gif"
+		"video":"img/morphingc.JPG",
+		"imagen":"img/morphing.JPG"
 	   },
 	   {
 		"descripcion":"Análisis de sentimiento de tweets en tiempo real",
 		"titulo":"NLP v2",
-		"video":"img/nlp.gif",
-		"imagen":"img/nlp.gif"
+		"video":"img/nlpv2c.JPG",
+		"imagen":"img/nlpv2.JPG"
 	   },
 	   {
 		"descripcion":"Plataforma visualización datos clínicos",
 		"titulo":"Dengue en Caldas",
-		"video":"img/mapa.png",
-		"imagen":"img/mapa.png"
+		"video":"img/mapac.jpg",
+		"imagen":"img/mapa.JPG"
 	   },
 	   {
 		"descripcion":"Launcher para presentar los aplicativos del CBBC",
 		"titulo":"Launcher",
-		"video":"img/launcher.gif",
-		"imagen":"img/launcher.gif"
+		"video":"img/launcher.jpg",
+		"imagen":"img/launcher.jpg"
 	   }
 	]
 

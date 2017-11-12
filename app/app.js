@@ -2,7 +2,12 @@
 var angularRoutingApp = angular.module('yeison', ['ui.router', 'ngAnimate', 'ngSanitize','ui.swiper','ngMap', 'ngScrollable','yeison.utilidades','yeison.validaciones','yeison.CustomDirective']);
 
 //trigger al cambiar de vista para validar loggin
-
+angularRoutingApp.config(function($sceDelegateProvider) {
+   $sceDelegateProvider.resourceUrlWhitelist([
+     'self',
+     '*://www.youtube.com/**'
+   ]);
+ });
 // Configuración de las rutas
 angularRoutingApp.config(function($stateProvider, $urlRouterProvider) {
 $urlRouterProvider.otherwise("/");
